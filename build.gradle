@@ -1,0 +1,40 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'java'
+
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-undertow:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-parent:${springBootVersion}")
+    compile('com.github.pagehelper:pagehelper-spring-boot-starter:1.2.5')
+    compile("com.h2database:h2:1.4.197")
+    compile("com.zaxxer:HikariCP:3.2.0")
+    compile("com.baomidou:mybatis-plus:3.0-RC1")
+    compile("org.freemarker:freemarker:2.3.23")
+
+    compile('io.springfox:springfox-swagger2:2.7.0')
+    // http://localhost:8080/v2/api-docs enabled
+    compile('io.springfox:springfox-swagger-ui:2.7.0')
+    compile group: 'org.apache.velocity', name: 'velocity-engine-core', version:'2.0'
+    runtime("mysql:mysql-connector-java")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

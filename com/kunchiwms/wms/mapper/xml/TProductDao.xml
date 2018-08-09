@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kunchiwms.wms.mapper.TProductDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.kunchiwms.wms.entity.TProduct">
+        <id column="id" property="id" />
+        <result column="cProductCode" property="cProductCode" />
+        <result column="cProductName" property="cProductName" />
+        <result column="dtCreateTime" property="dtCreateTime" />
+        <result column="dtUpdateTime" property="dtUpdateTime" />
+    </resultMap>
+
+</mapper>
